@@ -29,7 +29,7 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides><fields>
-        <fullName>Packed__c</fullName>
+        <fullName>xPacked__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Packed</label>
