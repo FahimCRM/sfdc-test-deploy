@@ -18,12 +18,12 @@ jobs:
       - run:
           name: npm Install
           command: sudo npm install
-          working_directory: project/src 
+          working_directory: deployment/src 
 
       - run:
           name: bower Install
           command: bower install
           working_directory: project/src
       - run: 
-          name: ant -lib lib/ -buildfile build/build.xml
-          command: ant -lib lib/ -buildfile build/build.xml
+          name: Deploy
+          command: ant -f builds/build.xml 
