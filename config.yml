@@ -1,0 +1,29 @@
+version: 2.0
+jobs:
+  build:
+    docker: 
+      - image: circleci/node:4.8.2
+      - image: circleci/java:8-jdk
+    steps:
+      - checkout
+
+      - run:
+          name: Install -g gulp
+          command: sudo npm install -g gulp
+
+      - run:
+          name: Install -g bower
+          command: sudo npm install -g bower  
+
+      - run:
+          name: npm Install
+          command: sudo npm install
+          working_directory: project/src 
+
+      - run:
+          name: bower Install
+          command: bower install
+          working_directory: project/src
+      - run: 
+          name: ant -lib lib/ -buildfile build/build.xml
+          command: ant -lib lib/ -buildfile build/build.xml
